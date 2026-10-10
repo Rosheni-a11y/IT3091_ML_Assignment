@@ -1,0 +1,31 @@
+column,role,dtype,notes
+split,metadata,str,Which split the row belongs to (train / val / test)
+Order Id,metadata,int64,Identifier / timestamp - NOT a model feature
+order date (DateOrders),metadata,datetime64[us],Identifier / timestamp - NOT a model feature
+Late_delivery_risk,target,int64,"1 = delivered late, 0 = on time"
+Type,feature (categorical),str,4 levels
+Shipping Mode,feature (categorical),str,4 levels
+Customer Segment,feature (categorical),str,3 levels
+Customer Country,feature (categorical),str,2 levels
+Customer State,feature (categorical),str,46 levels
+Market,feature (categorical),str,5 levels
+Order Region,feature (categorical),str,23 levels
+Department Name,feature (categorical),str,11 levels
+Category Name,feature (categorical),str,50 levels
+Order Item Quantity,feature (numeric),int64,"Original numeric column, retained as-is"
+Order Item Discount,feature (numeric),float64,"Original numeric column, retained as-is"
+Order Item Discount Rate,feature (numeric),float64,"Original numeric column, retained as-is"
+Product Price,feature (numeric),float64,"Original numeric column, retained as-is"
+Order Item Total,feature (numeric),float64,"Original numeric column, retained as-is"
+Latitude,feature (numeric),float64,"Original numeric column, retained as-is"
+Longitude,feature (numeric),float64,"Original numeric column, retained as-is"
+order_month,feature (engineered),int32,Derived from the order timestamp
+order_day,feature (engineered),int32,Derived from the order timestamp
+order_dayofweek,feature (engineered),int32,Derived from the order timestamp
+order_hour,feature (engineered),int32,Derived from the order timestamp
+order_quarter,feature (engineered),int32,Derived from the order timestamp
+order_weekofyear,feature (engineered),int64,Derived from the order timestamp
+is_weekend,feature (engineered),int64,Derived from the order timestamp
+is_month_end,feature (engineered),int64,Derived from the order timestamp
+is_quarter_end,feature (engineered),int64,Derived from the order timestamp
+is_afternoon,feature (engineered),int64,Derived from the order timestamp

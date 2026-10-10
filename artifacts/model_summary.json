@@ -1,0 +1,21 @@
+{
+  "models_compared": [
+    "7 \u00b7 Random Forest (tuned)",
+    "4 \u00b7 Random Forest",
+    "5 \u00b7 XGBoost",
+    "3 \u00b7 Decision Tree",
+    "2 \u00b7 Logistic Regression (baseline)",
+    "6 \u00b7 Neural Net (MLP)",
+    "1 \u00b7 Shipping Mode rule",
+    "0 \u00b7 Majority class"
+  ],
+  "baseline": "2 \u00b7 Logistic Regression (baseline)",
+  "best_by_val_roc_auc": "7 \u00b7 Random Forest (tuned)",
+  "val_roc_auc": 0.7704036718026277,
+  "test_roc_auc": 0.7806947252373565,
+  "test_recall": 0.59798118592115,
+  "test_precision": 0.8828118904579855,
+  "shipping_mode_rule_val_roc_auc": 0.7386905872252635,
+  "cv": "OrderAwareTimeSeriesSplit(n_splits=5) on the training split (TimeSeriesSplit with order-straddling rows removed)",
+  "random_state": 42
+}

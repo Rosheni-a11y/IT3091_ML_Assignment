@@ -1,0 +1,219 @@
+{
+  "random_state": 42,
+  "source_file": "DataCoSupplyChainDataset.csv",
+  "source_encoding": "latin-1",
+  "rows_raw": 180519,
+  "rows_after_scope_filter": 172765,
+  "excluded_order_statuses": [
+    "CANCELED",
+    "SUSPECTED_FRAUD"
+  ],
+  "target": "Late_delivery_risk",
+  "split_strategy": "chronological (out-of-time) on order date",
+  "split_boundaries": {
+    "val_start": "2016-11-01",
+    "test_start": "2017-05-01"
+  },
+  "split_sizes": {
+    "train": 109871,
+    "val": 29842,
+    "test": 33052
+  },
+  "split_late_rate": {
+    "train": 0.5735635427000756,
+    "val": 0.5709067756852758,
+    "test": 0.5724918310540966
+  },
+  "categorical_features": [
+    "Type",
+    "Shipping Mode",
+    "Customer Segment",
+    "Customer Country",
+    "Customer State",
+    "Market",
+    "Order Region",
+    "Department Name",
+    "Category Name"
+  ],
+  "numeric_features": [
+    "Order Item Quantity",
+    "Order Item Discount",
+    "Order Item Discount Rate",
+    "Product Price",
+    "Order Item Total",
+    "Latitude",
+    "Longitude",
+    "order_month",
+    "order_day",
+    "order_dayofweek",
+    "order_hour",
+    "order_quarter",
+    "order_weekofyear",
+    "is_weekend",
+    "is_month_end",
+    "is_quarter_end",
+    "is_afternoon"
+  ],
+  "engineered_features": [
+    "order_month",
+    "order_day",
+    "order_dayofweek",
+    "order_hour",
+    "order_quarter",
+    "order_weekofyear",
+    "is_weekend",
+    "is_month_end",
+    "is_quarter_end",
+    "is_afternoon"
+  ],
+  "metadata_columns": [
+    "Order Id",
+    "order date (DateOrders)"
+  ],
+  "rows_sorted_chronologically": true,
+  "n_features_raw": 26,
+  "n_features_encoded": 132,
+  "dropped_columns": {
+    "Days for shipping (real)": {
+      "reason": "leakage",
+      "justification": "Actual shipping duration; the label is literally derived from it"
+    },
+    "Delivery Status": {
+      "reason": "leakage",
+      "justification": "The target restated in words (Late / On time / Advance)"
+    },
+    "shipping date (DateOrders)": {
+      "reason": "leakage",
+      "justification": "Actual dispatch timestamp; post-order information"
+    },
+    "Order Status": {
+      "reason": "leakage",
+      "justification": "Post-order lifecycle state; not available at prediction time"
+    },
+    "Product Description": {
+      "reason": "no-information",
+      "justification": "100% null"
+    },
+    "Customer Email": {
+      "reason": "no-information",
+      "justification": "Single masked value for every row"
+    },
+    "Customer Password": {
+      "reason": "no-information",
+      "justification": "Single masked value for every row"
+    },
+    "Product Status": {
+      "reason": "no-information",
+      "justification": "Constant 0 (every product in stock)"
+    },
+    "Order Item Id": {
+      "reason": "identifier",
+      "justification": "Row primary key"
+    },
+    "Order Id": {
+      "reason": "identifier",
+      "justification": "Order key; retained temporarily for split checks"
+    },
+    "Customer Id": {
+      "reason": "identifier",
+      "justification": "Customer key"
+    },
+    "Order Customer Id": {
+      "reason": "identifier",
+      "justification": "Duplicate of Customer Id"
+    },
+    "Product Card Id": {
+      "reason": "identifier",
+      "justification": "Product key; Category Name carries the meaning"
+    },
+    "Order Item Cardprod Id": {
+      "reason": "identifier",
+      "justification": "Duplicate of Product Card Id"
+    },
+    "Category Id": {
+      "reason": "identifier",
+      "justification": "Numeric code for Category Name"
+    },
+    "Product Category Id": {
+      "reason": "identifier",
+      "justification": "Duplicate of Category Id"
+    },
+    "Department Id": {
+      "reason": "identifier",
+      "justification": "Numeric code for Department Name"
+    },
+    "Customer Fname": {
+      "reason": "pii",
+      "justification": "Personal data; no predictive value"
+    },
+    "Customer Lname": {
+      "reason": "pii",
+      "justification": "Personal data; no predictive value"
+    },
+    "Customer Street": {
+      "reason": "pii",
+      "justification": "Personal address; 7,458 distinct values"
+    },
+    "Customer Zipcode": {
+      "reason": "pii",
+      "justification": "Personal address; location captured by Lat/Long and State"
+    },
+    "Order Zipcode": {
+      "reason": "sparse",
+      "justification": "86% missing; destination captured by Order Region"
+    },
+    "Product Image": {
+      "reason": "no-information",
+      "justification": "Static image URL, one per product"
+    },
+    "Sales per customer": {
+      "reason": "redundant",
+      "justification": "Identical to Order Item Total"
+    },
+    "Order Item Product Price": {
+      "reason": "redundant",
+      "justification": "Identical to Product Price"
+    },
+    "Order Profit Per Order": {
+      "reason": "redundant",
+      "justification": "Identical to Benefit per order"
+    },
+    "Sales": {
+      "reason": "redundant",
+      "justification": "Exactly Product Price x Order Item Quantity"
+    },
+    "Days for shipment (scheduled)": {
+      "reason": "redundant",
+      "justification": "1-to-1 alias of Shipping Mode; kept in categorical form"
+    },
+    "Product Name": {
+      "reason": "redundant",
+      "justification": "118 levels nested inside Category Name (50 levels)"
+    },
+    "Benefit per order": {
+      "reason": "post-hoc",
+      "justification": "Realised profit; an accounting outcome, not an order input"
+    },
+    "Order Item Profit Ratio": {
+      "reason": "post-hoc",
+      "justification": "Realised profit margin; same objection"
+    },
+    "Customer City": {
+      "reason": "high-cardinality",
+      "justification": "563 levels; store location kept via Lat/Long + State"
+    },
+    "Order City": {
+      "reason": "high-cardinality",
+      "justification": "3,597 levels; destination kept via Order Region"
+    },
+    "Order State": {
+      "reason": "high-cardinality",
+      "justification": "1,089 levels; destination kept via Order Region"
+    },
+    "Order Country": {
+      "reason": "high-cardinality",
+      "justification": "164 levels; nested inside Order Region (23 levels)"
+    }
+  },
+  "smoke_test_val_roc_auc": 0.7471174310032942
+}

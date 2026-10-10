@@ -1,0 +1,36 @@
+column,reason,justification
+Customer City,high-cardinality,563 levels; store location kept via Lat/Long + State
+Order City,high-cardinality,"3,597 levels; destination kept via Order Region"
+Order Country,high-cardinality,164 levels; nested inside Order Region (23 levels)
+Order State,high-cardinality,"1,089 levels; destination kept via Order Region"
+Category Id,identifier,Numeric code for Category Name
+Customer Id,identifier,Customer key
+Department Id,identifier,Numeric code for Department Name
+Order Customer Id,identifier,Duplicate of Customer Id
+Order Id,identifier,Order key; retained temporarily for split checks
+Order Item Cardprod Id,identifier,Duplicate of Product Card Id
+Order Item Id,identifier,Row primary key
+Product Card Id,identifier,Product key; Category Name carries the meaning
+Product Category Id,identifier,Duplicate of Category Id
+Days for shipping (real),leakage,Actual shipping duration; the label is literally derived from it
+Delivery Status,leakage,The target restated in words (Late / On time / Advance)
+Order Status,leakage,Post-order lifecycle state; not available at prediction time
+shipping date (DateOrders),leakage,Actual dispatch timestamp; post-order information
+Customer Email,no-information,Single masked value for every row
+Customer Password,no-information,Single masked value for every row
+Product Description,no-information,100% null
+Product Image,no-information,"Static image URL, one per product"
+Product Status,no-information,Constant 0 (every product in stock)
+Customer Fname,pii,Personal data; no predictive value
+Customer Lname,pii,Personal data; no predictive value
+Customer Street,pii,"Personal address; 7,458 distinct values"
+Customer Zipcode,pii,Personal address; location captured by Lat/Long and State
+Benefit per order,post-hoc,"Realised profit; an accounting outcome, not an order input"
+Order Item Profit Ratio,post-hoc,Realised profit margin; same objection
+Days for shipment (scheduled),redundant,1-to-1 alias of Shipping Mode; kept in categorical form
+Order Item Product Price,redundant,Identical to Product Price
+Order Profit Per Order,redundant,Identical to Benefit per order
+Product Name,redundant,118 levels nested inside Category Name (50 levels)
+Sales,redundant,Exactly Product Price x Order Item Quantity
+Sales per customer,redundant,Identical to Order Item Total
+Order Zipcode,sparse,86% missing; destination captured by Order Region
