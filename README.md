@@ -11,6 +11,16 @@
 
 ---
 
+## Live demo
+
+**[Open the app](https://it3091mlassignment-a5pssekjqfbdbprx7e7chu.streamlit.app/)**
+
+Five tabs: the findings behind our recommendation, scoring a real order from the
+held-out test set, building your own order, model performance, and the recommendation
+itself. Built with Streamlit from the same model the notebooks produce.
+
+---
+
 ## The problem
 
 For every order, using only information known when the order is placed, predict whether it is
