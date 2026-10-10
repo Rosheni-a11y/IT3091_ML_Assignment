@@ -10,6 +10,8 @@ tokenized_access_logs.csv
 # Large regenerable outputs - rebuilt by running the notebooks.
 # ---------------------------------------------------------------
 artifacts/final_model.joblib
+# (app/model.joblib is the compressed 12 MB copy and IS committed,
+#  so the Streamlit app can be deployed - see app/build_model.py)
 artifacts/processed_dataset.csv
 artifacts/encoded_*.csv
 artifacts/transformed.npz
