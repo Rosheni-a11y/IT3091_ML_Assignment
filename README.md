@@ -1,4 +1,4 @@
-# DataCo Smart Supply Chain — Late-Delivery Risk
+# DataCo Smart Supply Chain: Late-Delivery Risk
 
 **IT3091 Machine Learning · Group 2026-AI-05 · Guided Data Track (Logistics & Supply Chain)**
 
@@ -14,7 +14,7 @@
 ## The problem
 
 For every order, using only information known when the order is placed, predict whether it is
-at risk of being delivered late — early enough for operations to intervene.
+at risk of being delivered late, early enough for operations to intervene.
 
 Supervised binary classification. Target: `Late_delivery_risk` (1 = late).
 
@@ -29,7 +29,7 @@ Supervised binary classification. Target: `Late_delivery_risk` (1 = late).
 
 **Final test ROC-AUC: 0.7807**
 
-The more useful finding is not the model. **First Class orders are late 100% of the time** —
+The more useful finding is not the model. **First Class orders are late 100% of the time** -
 every one takes exactly 2 days against a 1-day promise. Second Class and Standard Class have
 identical actual transit times (2-6 days, median 4) yet are late 80% and 40%. The lateness is
 caused by the delivery promise, not the delivery network.
@@ -42,14 +42,12 @@ caused by the delivery promise, not the delivery network.
 | `02_Model_Training.ipynb` | Baseline + 4 alternatives, tuning, evaluation. ~17 min |
 | `artifacts/` | Splits, fitted pipeline, decision log, model comparison, manifest |
 | `figures/` | 41 charts produced by the notebooks |
-| `IT3091 Final Report - 2026-AI-05.docx` | The final report |
-| `workflow_diagram.md` | Mermaid source for the workflow diagram |
-| `HANDOFF_tuning.md` | Notes passed to the member who did hyperparameter tuning |
+| `IT3091 Final Report - 2026-AI-05.docx` | The final report, including the workflow diagram and AI-use declaration |
 
 ## Not in this repository
 
-The raw dataset (`DataCoSupplyChainDataset.csv`, 91.5 MB) is excluded — it is too close to
-GitHub's file size limit, and it is a public dataset. Download it from the link in the
+The raw dataset (`DataCoSupplyChainDataset.csv`, 91.5 MB) is excluded. It is too close to
+GitHub's 100 MB file limit, and it is public data anyway. Download it from the link in the
 assignment descriptor. To confirm you have the same file we used:
 
 ```
