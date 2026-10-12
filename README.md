@@ -5,7 +5,7 @@
 | Member | IT Number | Focus |
 |---|---|---|
 | Bolonne B.R.M. | IT24102050 | EDA + Preprocessing |
-| Kodagoda D.S. | IT24101613 | EDA + baseline |
+| Kodagoda D.S. | IT24101613 | EDA + Baseline model training|
 | Jayasekara C.D. | IT24103494 | EDA + Hyper Parameter Tuning|
 | Liyanage J.L.K.L. | IT24101927 | EDA + Evaluation and recommendation |
 
