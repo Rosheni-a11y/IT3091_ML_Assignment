@@ -4,10 +4,10 @@
 
 | Member | IT Number | Focus |
 |---|---|---|
-| Bolonne B.R.M. | IT24102050 | Framing + EDA |
-| Kodagoda D.S. | IT24101613 | Preprocessing + baseline |
-| Jayasekara C.D. | IT24103494 | Advanced models + tuning |
-| Liyanage J.L.K.L. | IT24101927 | Evaluation + recommendation |
+| Bolonne B.R.M. | IT24102050 | EDA + Preprocessing |
+| Kodagoda D.S. | IT24101613 | EDA + baseline |
+| Jayasekara C.D. | IT24103494 | EDA + Hyper Parameter Tuning|
+| Liyanage J.L.K.L. | IT24101927 | EDA + Evaluation and recommendation |
 
 ---
 
